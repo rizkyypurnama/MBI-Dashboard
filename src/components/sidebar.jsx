@@ -45,24 +45,32 @@ export default function Sidebar({ showSidebar = false, onClose = () => {} }) {
         }`}
       >
         {/* Header mobile */}
-        <div className="px-6 py-6 text-xl font-bold border-b border-slate-700 h-[72px] flex items-center justify-between">
-          <span>
-            EURASTROY <span className="text-xs text-gray-400 ml-1">V 1.0</span>
-          </span>
-          <button onClick={onClose}>
-            <X size={20} className="text-gray-400" />
-          </button>
-        </div>
+    <div className="px-6 py-6 text-xl font-bold border-b border-slate-700 h-[72px] flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <img src="/assets/menu.png" alt="Menu Icon" className="w-5 h-5" />
+        <span>
+          EURASTROY <span className="text-xs text-gray-400 ml-1">V 1.0</span>
+        </span>
+      </div>
+      <button onClick={onClose}>
+        <X size={20} className="text-gray-400" />
+      </button>
+    </div>
+
         <SidebarContent openMenus={openMenus} toggleMenu={toggleMenu} />
       </aside>
 
-      {/* ==== DESKTOP SIDEBAR ==== */}
-      <aside className="hidden md:flex flex-col w-64 bg-slate-900 text-white h-screen fixed top-0 left-0 shadow-md text-xs">
-        <div className="px-6 py-6 text-xl font-bold border-b border-slate-700 h-[72px] flex items-center">
+    {/* ==== DESKTOP SIDEBAR ==== */}
+    <aside className="hidden md:flex flex-col w-64 bg-slate-900 text-white h-screen fixed top-0 left-0 shadow-md text-xs">
+      <div className="px-6 py-6 text-xl border-b border-slate-700 h-[72px] flex items-center gap-2">
+        <img src="/assets/menu.png" alt="Menu Icon" className="w-5 h-5" />
+        <span>
           EURASTROY <span className="text-xs text-gray-400 ml-1">V 1.0</span>
-        </div>
-        <SidebarContent openMenus={openMenus} toggleMenu={toggleMenu} />
-      </aside>
+        </span>
+      </div>
+      <SidebarContent openMenus={openMenus} toggleMenu={toggleMenu} />
+    </aside>
+
     </>
   );
 }
